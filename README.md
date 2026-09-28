@@ -14,6 +14,16 @@ routes around the dead ones until they are back. Details, options and limits:
    `https://github.com/skohls/thread_route_guard`.
 2. Install **Thread Route Guard** and start it. The defaults need no changes.
 
+## Development
+
+- `scripts/deploy-local.sh <ssh host>` copies the app to `/local_apps` on a Home Assistant host
+  (through the Terminal & SSH app) and rebuilds it there as `local_thread_route_guard`. Uninstall
+  the store version first, two running copies would fight over the same route.
+- Every push to `main` builds the images for amd64 and aarch64 and publishes them to
+  `ghcr.io/skohls/{arch}-addon-thread_route_guard` under the version from `config.yaml` and
+  `latest`. A version that is already published is not overwritten, so raise `version` and add a
+  `CHANGELOG.md` entry for every release.
+
 ## License
 
 [MIT](LICENSE)

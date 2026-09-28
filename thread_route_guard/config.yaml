@@ -5,6 +5,7 @@ description: >-
   Routes around dead Thread border routers that Home Assistant OS keeps in its
   RA-learned multipath routes for up to 30 minutes.
 url: https://github.com/skohls/thread_route_guard
+image: ghcr.io/skohls/{arch}-addon-thread_route_guard
 arch:
   - amd64
   - aarch64
