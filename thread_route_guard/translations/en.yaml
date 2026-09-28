@@ -1,0 +1,21 @@
+configuration:
+  prefixes:
+    name: Prefix filter
+    description: >-
+      Only watch routes inside these prefixes (e.g. fd00::/8). Leave empty to watch every
+      RA-learned route with at least two next hops.
+  probe_interval:
+    name: Probe interval
+    description: Seconds between two health checks of every next hop.
+  dead_after:
+    name: Dead after
+    description: Seconds of failed checks before a next hop counts as dead.
+  healthy_after:
+    name: Healthy after
+    description: Seconds of successful checks before a dead next hop counts as healthy again.
+  dry_run:
+    name: Dry run
+    description: Only log what would be changed, never touch a route.
+  log_level:
+    name: Log level
+    description: Amount of log output. State changes are logged at info level.

@@ -1,0 +1,32 @@
+name: Thread Route Guard
+version: "0.1.0"
+slug: thread_route_guard
+description: >-
+  Routes around dead Thread border routers that Home Assistant OS keeps in its
+  RA-learned multipath routes for up to 30 minutes.
+url: https://github.com/skohls/thread_route_guard
+arch:
+  - amd64
+  - aarch64
+stage: experimental
+init: false
+startup: services
+boot: auto
+host_network: true
+privileged:
+  - NET_ADMIN
+options:
+  prefixes: []
+  probe_interval: 5
+  dead_after: 30
+  healthy_after: 60
+  dry_run: false
+  log_level: info
+schema:
+  prefixes:
+    - str
+  probe_interval: int(2,60)
+  dead_after: int(5,1800)
+  healthy_after: int(5,3600)
+  dry_run: bool
+  log_level: list(debug|info|warning|error)
