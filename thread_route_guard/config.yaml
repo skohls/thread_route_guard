@@ -12,7 +12,6 @@ arch:
 stage: experimental
 init: false
 startup: services
-boot: auto
 host_network: true
 privileged:
   - NET_ADMIN
